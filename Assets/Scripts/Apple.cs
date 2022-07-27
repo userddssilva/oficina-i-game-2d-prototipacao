@@ -8,6 +8,7 @@ public class Apple : MonoBehaviour
     private CircleCollider2D circle;
 
     public GameObject collected;
+    public int score;
 
     void Start()
     {
@@ -21,9 +22,10 @@ public class Apple : MonoBehaviour
         {
             spriteRenderer.enabled = false;
             circle.enabled = false;
-
             collected.SetActive(true);
 
+            GameController.instance.totalScore += score;
+            GameController.instance.UpdateScoreText();
 
             Destroy(gameObject, 1f);
         }
