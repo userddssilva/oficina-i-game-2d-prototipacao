@@ -74,6 +74,13 @@ public class Player : MonoBehaviour
             isJumping = false;
             animator.SetBool("jump", false);
         }
+
+        if (collision.gameObject.tag == "Spikes")
+        {
+            Debug.Log("die!!!!!!!!!!");
+            GameController.instance.ShowGameOver();
+            Destroy(gameObject); 
+        }
     }
 
     private void OnCollisionExit2D(Collision2D collision)

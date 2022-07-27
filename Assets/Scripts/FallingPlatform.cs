@@ -28,14 +28,6 @@ public class FallingPlatform : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.gameObject.tag == "Player")
-        {
-
-        }
-    }
-
     private void Falling()
     {
         _targetJoint2D.enabled = false;
